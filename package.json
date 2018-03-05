@@ -1,0 +1,30 @@
+{
+  "name": "e-music",
+  "version": "1.0.0",
+  "description": "Music player",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "packagerWin": "electron-packager ./ eMusic --platform=win32 --arch=x64 ./OutApp --asar --version 1.0.0 --icon=./app/resources/img/icon/eMusic.ico --ignore=\"(dist|src|docs|.gitignore|LICENSE|README.md|webpack.config.js|node_modules)\"",
+    "packagerDarwin": "electron-packager ./ eMusic --platform=darwin --arch=x64 ./OutApp --asar --version 1.0.0 --icon=./app/resources/img/icon/eMusic.ico --ignore=\"(dist|src|docs|.gitignore|LICENSE|README.md|webpack.config.js|node_modules)\"",
+    "packagerLinux": "electron-packager ./ eMusic --platform=linux --arch=x64 ./OutApp --asar --version 1.0.0 --icon=./app/resources/img/icon/eMusic.ico --ignore=\"(dist|src|docs|.gitignore|LICENSE|README.md|webpack.config.js|node_modules)\"",
+    "package": "npm run packageDarwin && npm run packageWin && npm run packageLinux",
+    "prepackage": "rm -rf build && webpack --config webpack.config.prod.js && rm -rf dist"
+  },
+  "author": "Chen",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "electron-packager": "^8.6.0",
+    "electron-prebuilt": "^1.4.13",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "dependencies": {
+    "big-integer": "^1.6.19",
+    "express": "^4.15.2",
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^3.2.0",
+    "power-assert": "^1.4.2"
+  }
+}
