@@ -5,7 +5,7 @@ const express = require('express');
 const {ipcRenderer} = electron;
 const http = require('http');
 const url = express();
-const topList = require("../router/top_list");
+const topList = require("./js/top_list");
 const { createWebAPIRequest } = require("../util/util")
 
 var bg = document.querySelector('.music'),
